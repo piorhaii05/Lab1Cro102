@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import HomeScreen from "./index"
 import Bai2ScreenDemo from "./bai2"
+import bai3 from './bai3'
 
 const StackDemo = createNativeStackNavigator();
 
@@ -16,10 +17,13 @@ const AppScreen = (props: any) => {
       <TouchableOpacity onPress={() => props.navigation.navigate('Bai2')}>
         <Text style={styles.text}>Bài 2</Text>
       </TouchableOpacity>
+      <TouchableOpacity onPress={() => props.navigation.navigate('Bai3')}>
+        <Text style={styles.text}>Bài 3</Text>
+      </TouchableOpacity>
     </View>
   )
 }
-const Bai1Screen = () => {
+const Bai1Screen = () => { 
   return (
     <HomeScreen />
   )
@@ -37,6 +41,7 @@ const App = () => {
         <StackDemo.Screen name='App' component={AppScreen} options={{ headerShown: false }} />
         <StackDemo.Screen name='Bai1' component={Bai1Screen}/>
         <StackDemo.Screen name='Bai2' component={Bai2Screen}/>
+        <StackDemo.Screen name='Bai3' component={bai3}/>
       </StackDemo.Navigator>
     </NavigationContainer>
   )
